@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Weather Me App</title>
+</head>
+
+<body class="font-inter">
+
+  <!-- App container -->
+  <div class="h-screen flex flex-col bg-cover bg-sky-300" id="weather-bg-img">
+
+    <!-- App header -->
+    <header class="h-24 bg-white shadow-md px-4 py-2">
+      <h1 class="font-bold text-orange-500 text-xl md:text-3xl">Weather Me, la météo en images et en musique</h1>
+    </header>
+
+    <!-- App main content -->
+    <div
+      class="flex flex-col h-4/5 justify-between w-fit mx-auto p-4 my-20 md:w-2/3 lg:w-1/3 lg:my-32 text-gray-800 bg-white bg-opacity-25 rounded-md">
+      <!--ou flex-1 au lieu de flex flex-col h-4/5 -->
+
+      <!--Form section -->
+        <form method="get" class="flex gap-2">
+        <input type="text" placeholder="Ville" id="city-name" class="bg-white border-0 rounded-full flex-1">
+        <button id="submit-weather" class="flex justify-center items-center bg-white rounded-full w-10 h-10">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6  text-gray-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+        </button>
+        </form>
+
+      <!-- Weather description section (icon, temp and city name) -->
+      <div class="flex flex-col justify-between items-center gap-4">
+        <img id="weather-icon" src="" class=" hidden w-24 h-24 md:w-48 md:h-48">
+        <p id="weather-description" class="text-lg first-letter:capitalize"></p>
+        <div class="flex flex-col items-center gap-4">
+          <p class="text-5xl md:text-7xl" id="display-current-temperature"></p>
+          <p class="text-3xl md:text-4xl" id="display-city-name"></p>
+        </div>
+
+      </div>
+
+      <!-- Weather details -->
+      <div class="flex justify-between font-semibold">
+        <div class="flex">
+          <img id="humidity-icon" src="./public/icons/humidity.svg" alt="weather humidity" class="hidden w-12 h-12">
+          <div class="flex flex-col items-start">
+            <p id="display-humidity"></p>
+            <p id="humidity"></p>
+          </div>
+        </div>
+
+        <div class="flex">
+          <img id="wind-icon" src="./public/icons/windsock.svg" alt="weather humidity" class="hidden w-12 h-12">
+          <div class="flex flex-col items-start">
+            <p id="display-wind-speed"></p>
+            <p id="wind-speed"></p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
