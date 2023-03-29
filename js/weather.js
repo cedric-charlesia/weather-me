@@ -1,3 +1,4 @@
+import { getMusic } from "./music";
 import { getPicture } from "./picture";
 
 const weatherAPIKey = import.meta.env.VITE_WEATHER_API_KEY;
@@ -66,6 +67,7 @@ export const getWeather = async (cityName) => {
   }
 
   getPicture(data.weather[0].main)
+  getMusic(data.weather[0].main)
 
   return data
 };

@@ -1,10 +1,6 @@
-import { getWeather } from "./weather.js";
-import { getPicture } from "./picture.js";
-
-const spotifyClientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const spotifySecretKey = import.meta.env.VITE_SPOTIFY_BASE_URL;
-
-const spotifyBaseUrl = "https://api.spotify.com/v1/search?q=";
+const spotifyClientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID
+const spotifySecretKey = import.meta.env.VITE_SPOTIFY_SECRET_KEY
+const spotifyBaseUrl = import.meta.env.VITE_SPOTIFY_BASE_URL
 
 const getSpotifyAccessToken = async () => {
   let accessToken = {
@@ -24,9 +20,30 @@ const getSpotifyAccessToken = async () => {
   let spotifyToken = data.access_token;
   return spotifyToken;
 };
+let query = "joy"
 
-export const getMusic = async (query) => {
+export const getMusic = async (weatherCondition) => {
   const token = await getSpotifyAccessToken();
+
+  if (weatherCondition === "Clear") {
+    query = "sunny"
+  }
+
+  if (weatherCondition === "Clouds") {
+    query = "cloudy"
+  }
+
+  if (weatherCondition === "Rain") {
+    query = "rain"
+  }
+
+  if (weatherCondition === "Snow") {
+    query = "snow"
+  }
+
+  if (weatherCondition === "Thunderstorm") {
+    query = "thunder"
+  }
 
   const response = await fetch(
     `${spotifyBaseUrl}${query}&type=track&locale=fr&offset=0&limit=5`,
@@ -40,8 +57,13 @@ export const getMusic = async (query) => {
   );
 
   const data = await response.json();
+
   //   let music = data.tracks.items[0].external_urls.spotify
   let trackId = data.tracks.items[0].id;
   //console.log(trackId);
+
+  const playTrack = document.getElementById("weather-track")
+  playTrack.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`
+
   return trackId;
 };
