@@ -10,6 +10,7 @@ export default {
       serif: ["ui-serif", "Georgia"],
       mono: ["ui-monospace", "SFMono-Regular"],
       inter: ["Inter", "sans"],
+      roboto: ["Roboto", "sans"],
     },
     extend: {},
   },

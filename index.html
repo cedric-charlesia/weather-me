@@ -7,19 +7,20 @@
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Weather Me App</title>
 </head>
 
-<body class="font-inter">
+<body class="font-roboto">
 
   <!-- App container -->
-  <div class="h-screen flex flex-col bg-cover bg-sky-300" id="weather-bg-img">
+  <div class="h-screen flex flex-col bg-cover bg-gradient-to-r from-teal-400 to-cyan-500" id="weather-bg-img">
 
     <!-- App header -->
-    <header class="h-24 text-center bg-transparent px-4 py-2">
-      <h1 class="text-2xl md:text-4xl"><span class="uppercase font-bold text-orange-500">Weather Me</span>, météo en image et en musique</h1>
+    <header class="h-24 text-center bg-transparent px-4 py-2 space-y-1">
+      <!--<h1 class="text-2xl md:text-4xl font-inter font-bold uppercase text-rose-500">Weather Me</h1>
+        <p class="font-inter font-bold text-2xl text-white">Météo en image et en musique</p>-->
     </header>
 
     <!-- App main content -->
@@ -28,7 +29,9 @@
       
       <!--Form section -->
         <form method="get" class="flex gap-2">
-        <input type="text" placeholder="Ville" id="city-name" class="bg-white border-slate-500 rounded-full flex-1">
+
+        <input type="text" placeholder="Quel temps fail-il à..." id="city-name" class="bg-white border-slate-500 rounded-full flex-1">
+
         <button id="submit-weather" class="flex justify-center items-center bg-white rounded-full w-10 h-10">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-6 h-6  text-gray-500">
@@ -36,10 +39,11 @@
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
         </button>
+
         </form>
 
       <!-- Weather description section (icon, temp and city name) -->
-      <div class="flex flex-col justify-between items-center gap-4 text-white">
+      <div class="flex flex-col justify-between items-center gap-4 text-black">
         <img id="weather-icon" src="" class=" hidden w-24 h-24 md:w-48 md:h-48">
         <p id="weather-description" class="text-lg first-letter:capitalize"></p>
         <div class="flex flex-col items-center gap-4">
@@ -50,7 +54,7 @@
       </div>
 
       <!-- Weather details -->
-      <div class="flex justify-between font-semibold text-white">
+      <div class="flex justify-between font-semibold text-black">
         <div class="flex">
           <img id="humidity-icon" src="./public/icons/humidity.svg" alt="weather humidity" class="hidden w-12 h-12">
           <div class="flex flex-col items-start">
@@ -71,7 +75,7 @@
 
           <!-- Weather music -->
       <div class="absolute left-0 bottom-2 w-full px-2">
-      <iframe id="weather-track" style="border-radius:12px" src="" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe id="weather-track" style="border-radius:12px" src="" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
   </div>
