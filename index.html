@@ -3,47 +3,61 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
   <title>Weather Me App</title>
 </head>
 
 <body class="font-roboto">
 
   <!-- App container -->
-  <div class="h-screen flex flex-col bg-cover bg-gradient-to-r from-teal-400 to-cyan-500" id="weather-bg-img">
+  <div class="h-screen flex flex-col bg-cover bg-[url('public/beachview.jpg')]" id="weather-bg-img">
 
     <!-- App header -->
-    <header class="h-24 text-center bg-transparent px-4 py-2 space-y-1">
-      <h1 class="text-2xl md:text-4xl font-bold uppercase text-rose-500">Weather Me</h1>
-        <p class="text-3xl text-black">La météo en image et en musique</p>
+    <header class="h-24 flex items-center bg-white shadow-md px-2">
+
+      <div class="w-1/3 flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-10 h-10 text-yellow-400">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+      </svg>
+
+      <h1 class="text-1xl md:text-3xl font-bold uppercase text-yellow-400">Weather Me</h1>
+      </div>
+      
+      <p class="text-2xl text-black uppercase hidden lg:block">La météo en image et en musique</p>
     </header>
 
     <!-- App main content -->
     <div
-      class="flex flex-col h-4/5 justify-between w-fit mx-auto p-4 mt-10 mb-48 md:w-2/3 lg:w-1/3 lg:mt-32 text-gray-800 bg-white bg-opacity-25 rounded-md">
-      
+      class="flex flex-col h-4/5 justify-between w-fit mx-auto p-4 mt-10 mb-48 md:w-2/3 lg:w-1/3 lg:mt-32 text-gray-800 bg-white bg-opacity-50 rounded-md">
+
       <!--Form section -->
-        <form method="get" class="space-y-3">
+      <form method="get" class="space-y-3">
 
-          <div class="flex gap-2">
-        <input type="text" placeholder="Quel temps fail-il à..." id="city-name" class="bg-white border-slate-500 rounded-full flex-1">
+        <div class="flex gap-2">
+          <input type="text" placeholder="Quel temps fail-il à..." id="city-name"
+            class="bg-white border-slate-500 rounded-full flex-1">
 
-        <button id="submit-weather" class="flex justify-center items-center bg-white rounded-full w-10 h-10">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6  text-gray-500">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-          </svg>
-        </button></div>
+          <button id="submit-weather" class="flex justify-center items-center bg-white rounded-full w-10 h-10">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-6 h-6  text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+          </button>
+        </div>
 
-        <p class="text-rose-500 text-center md:text-left hidden" id="error-message">Une erreur s'est produite.Vérifier l'orthographe et réessayez</p>
+        <p class="text-rose-500 text-center md:text-left hidden" id="error-message">Une erreur s'est produite.Vérifier
+          l'orthographe et réessayez</p>
 
-        </form>
+      </form>
 
       <!-- Weather description section (icon, temp and city name) -->
       <div class="flex flex-col justify-between items-center gap-4 text-black">
@@ -76,9 +90,10 @@
       </div>
     </div>
 
-          <!-- Weather music -->
-      <div class="absolute left-0 bottom-2 w-full px-2">
-      <iframe id="weather-track" style="border-radius:12px" src="" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <!-- Weather music -->
+    <div class="absolute left-0 bottom-2 w-full px-2">
+      <iframe id="weather-track" style="border-radius:12px" src="" width="100%" height="152" frameBorder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
   </div>

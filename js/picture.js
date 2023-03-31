@@ -39,26 +39,6 @@ export const getPicture = async (weatherDescription) => {
     const images = data.results
 
     const backgroundImage = document.getElementById("weather-bg-img")
-    backgroundImage.classList.remove("bg-gradient-to-r", "from-teal-400", "to-cyan-500")
+    backgroundImage.style.backgroundImage = `url('${images[0].urls.regular}')`
 
-    let index = 0
-    let i = 0
-
-    const updateBackgroundImage = () => {
-        if (index >= images.length) {
-            index = 0
-            i++
-        }
-
-        backgroundImage.style.backgroundImage = `url('${images[index].urls.regular}')`
-
-        if (i >= 7) {
-            clearInterval(interval)
-        } else {
-            index++
-        }
-    }
-
-    updateBackgroundImage()
-    let interval = setInterval(updateBackgroundImage, 10000)
 }

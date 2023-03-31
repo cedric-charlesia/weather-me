@@ -67,5 +67,6 @@ export const getMusic = async (weatherDescription) => {
   let trackId = data.tracks.items[0].id
 
   const playTrack = document.getElementById("weather-track")
+  playTrack.classList.remove("hidden")
   playTrack.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`
 }

@@ -12,6 +12,8 @@ export const getWeather = async (cityName) => {
 
   if (data.message === "city not found") {
     document.getElementById("error-message").classList.remove("hidden")
+    document.getElementById("weather-bg-img").style.backgroundImage = `url('public/beachview.jpg')`
+    document.getElementById("weather-track").classList.add("hidden")
 
     document.getElementById("display-city-name").textContent = ""
     document.getElementById("display-current-temperature").textContent = ""
