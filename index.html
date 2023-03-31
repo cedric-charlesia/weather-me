@@ -16,7 +16,7 @@
 <body class="font-poppins">
 
   <!-- App container -->
-  <div class="h-screen flex flex-col bg-cover bg-[url('public/beachview.jpg')]" id="weather-bg-img">
+  <div class="h-screen flex flex-col w-screen bg-cover bg-[url('public/beachview.jpg')]" id="weather-bg-img">
 
     <!-- App header -->
     <header class="h-14 flex justify-between items-center uppercase bg-white bg-opacity-20 shadow-md px-2 rounded-b-lg">
@@ -39,26 +39,26 @@
     <!-- App main content -->
     <div class="flex flex-col justify-between gap-4">
 
-    <div
-      class="flex flex-col justify-between h-full w-fit mx-auto p-4 mt-10 md:w-2/3 lg:w-1/3 lg:mt-32 text-gray-800 bg-white bg-opacity-50 rounded-md">
+    <div id="content-container"
+      class="flex flex-col justify-between h-full w-[90%] mx-auto p-4 mt-10 md:w-2/3 lg:w-1/3 lg:mt-32 text-gray-800">
 
       <!--Form section -->
       <form method="get" class="space-y-3">
 
-        <div class="flex gap-2">
+        <div class="flex justify-center gap-2">
           <input type="text" placeholder="Quel temps fail-il à..." id="city-name"
-            class="bg-white border-slate-500 rounded-full flex-1">
+            class="bg-white border-0 rounded-full w-full">
 
           <button id="submit-weather" class="flex justify-center items-center bg-white rounded-full w-10 h-10">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6  text-gray-500">
+              stroke="currentColor" class="w-6 h-6  text-gray-700">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
           </button>
         </div>
 
-        <p class="text-rose-500 text-center md:text-left hidden" id="error-message"></p>
+        <p class="text-rose-500 md:text-left px-2 hidden" id="error-message"></p>
 
       </form>
 
@@ -94,7 +94,7 @@
     </div>
 
     <!-- Weather music -->
-    <div class="w-fit md:w-2/3 lg:w-1/3 mx-auto">
+    <div class="w-[90%] md:w-2/3 lg:w-1/3 mx-auto">
       <iframe id="weather-track" style="border-radius:12px" src="" width="100%" height="140px" frameBorder="0"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>

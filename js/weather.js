@@ -14,6 +14,7 @@ export const getWeather = async (cityName) => {
     document.getElementById("error-message").classList.remove("hidden")
     document.getElementById("error-message").textContent = "Oups, une erreur s'est produite. Vérifiez l'orthographe et réessayez"
     document.getElementById("weather-bg-img").style.backgroundImage = `url('public/beachview.jpg')`
+    document.getElementById("content-container").classList.remove("bg-white", "bg-opacity-50", "rounded-md")
     document.getElementById("weather-track").classList.add("hidden")
 
     document.getElementById("display-city-name").textContent = ""
@@ -33,6 +34,7 @@ export const getWeather = async (cityName) => {
     document.getElementById("weather-icon").src = ""
   }
   else {
+    document.getElementById("content-container").classList.add("bg-white", "bg-opacity-50", "rounded-md")
     document.getElementById("error-message").classList.add("hidden")
 
     document.getElementById("display-city-name").textContent = `${data.name}, ${data.sys.country}`
