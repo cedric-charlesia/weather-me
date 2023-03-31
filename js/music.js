@@ -68,25 +68,4 @@ export const getMusic = async (weatherDescription) => {
 
   const playTrack = document.getElementById("weather-track")
   playTrack.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`
-
-  // let index = 0
-  //   let i = 0
-
-  //   const updateMusic = () => {
-  //       if (index >= tracks.length) {
-  //           index = 0
-  //           i++
-  //       }
-
-  //       playTrack.src = `https://open.spotify.com/embed/track/${tracks[index].id}?utm_source=generator`
-  //       console.log(playTrack.src);
-  //       if (i >= 5) {
-  //           clearInterval(interval)
-  //       } else {
-  //           index++
-  //       }
-  //   }
-
-  //   updateMusic()
-  //   let interval = setInterval(updateMusic, 33000)
 }

@@ -61,5 +61,4 @@ export const getPicture = async (weatherDescription) => {
 
     updateBackgroundImage()
     let interval = setInterval(updateBackgroundImage, 10000)
-
 }
