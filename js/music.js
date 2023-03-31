@@ -25,14 +25,14 @@ export const getMusic = async (weatherDescription) => {
   const token = await getSpotifyAccessToken()
 
   let query = ""
-  const clearWeather = ["sunny", "beautiful day", "sunny day", "sunshine", "beach"]
-  const cloudyWeather = ["cloudy", "clouds", "cloudy day", "cloudy weather"]
-  const rainyWeather = ["rainy", "rainy day", "rainy window", "rain", "heavy rain"]
-  const snowyWeather = ["snow", "snowy", "snowy mountains", "winter", "christmas"]
-  const thunderWeather = ["thunder", "storm", "hurricane" ]
+  const clearWeather = ["sunny", "soleil", "beautiful day", "sunny day", "sunshine", "beach"]
+  const cloudyWeather = ["cloudy", "nuage", "cloudy day", "cloudy weather"]
+  const rainyWeather = ["rainy day", "rainy window", "rain", "heavy rain", "pluie", "pluvieux"]
+  const snowyWeather = ["snow", "snowy", "neige", "winter", "christmas"]
+  const thunderWeather = ["thunder", "storm", "orage","hurricane" ]
 
   if (weatherDescription === "clear") {
-    query = clearWeather[Math.ceil(Math.random() * 5)]
+    query = clearWeather[Math.ceil(Math.random() * 6)]
   }
 
   if (weatherDescription === "clouds") {
@@ -40,7 +40,7 @@ export const getMusic = async (weatherDescription) => {
   }
 
   if (weatherDescription === "rain") {
-    query = rainyWeather[Math.ceil(Math.random() * 5)]
+    query = rainyWeather[Math.ceil(Math.random() * 6)]
   }
 
   if (weatherDescription === "snow") {
@@ -48,7 +48,7 @@ export const getMusic = async (weatherDescription) => {
   }
 
   if (weatherDescription === "thunder") {
-    query = thunderWeather[Math.ceil(Math.random() * 3)]
+    query = thunderWeather[Math.ceil(Math.random() * 4)]
   }
 
   const response = await fetch(

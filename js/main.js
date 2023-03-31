@@ -13,8 +13,15 @@ document.getElementById("submit-weather").addEventListener(
         event.preventDefault()
 
         const userInput = document.getElementById("city-name").value
-        const cityName = userInput.toLowerCase()
-        
-        getWeather(cityName)
-        
-})
+        if (userInput === "") {
+            document.getElementById("error-message").classList.remove("hidden")
+            document.getElementById("error-message").textContent = "Veuillez entrer le nom d'une ville"
+        }
+        else {
+            document.getElementById("error-message").classList.add("hidden")
+            const cityName = userInput.toLowerCase()
+            getWeather(cityName)
+        }
+
+
+    })

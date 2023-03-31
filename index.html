@@ -8,35 +8,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto:wght@400;500;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
     rel="stylesheet">
   <title>Weather Me App</title>
 </head>
 
-<body class="font-roboto">
+<body class="font-poppins">
 
   <!-- App container -->
   <div class="h-screen flex flex-col bg-cover bg-[url('public/beachview.jpg')]" id="weather-bg-img">
 
     <!-- App header -->
-    <header class="h-24 flex items-center bg-white shadow-md px-2">
+    <header class="h-14 flex justify-between items-center uppercase bg-white bg-opacity-20 shadow-md px-2 rounded-b-lg">
 
-      <div class="w-1/3 flex items-center">
+      <a href="/" class="flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="w-10 h-10 text-yellow-400">
         <path stroke-linecap="round" stroke-linejoin="round"
           d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
       </svg>
 
-      <h1 class="text-1xl md:text-3xl font-bold uppercase text-yellow-400">Weather Me</h1>
-      </div>
+      <h1 class="text-xl md:text-2xl font-bold text-yellow-400">Weather Me</h1></a>
+    
       
-      <p class="text-2xl text-black uppercase hidden lg:block">La météo en image et en musique</p>
+      <p class="text-lg hidden lg:block font-bold text-zinc-900">La météo en image et en musique</p>
+
+      <a href="https://cedriccharlesia.com/" class="text-sm md:text-lg hover:text-yellow-400 lg:pr-4">Retour au portfolio</a>
     </header>
 
     <!-- App main content -->
+    <div class="flex flex-col justify-between gap-4">
+
     <div
-      class="flex flex-col h-4/5 justify-between w-fit mx-auto p-4 mt-10 mb-48 md:w-2/3 lg:w-1/3 lg:mt-32 text-gray-800 bg-white bg-opacity-50 rounded-md">
+      class="flex flex-col justify-between h-full w-fit mx-auto p-4 mt-10 md:w-2/3 lg:w-1/3 lg:mt-32 text-gray-800 bg-white bg-opacity-50 rounded-md">
 
       <!--Form section -->
       <form method="get" class="space-y-3">
@@ -54,8 +58,7 @@
           </button>
         </div>
 
-        <p class="text-rose-500 text-center md:text-left hidden" id="error-message">Une erreur s'est produite.Vérifier
-          l'orthographe et réessayez</p>
+        <p class="text-rose-500 text-center md:text-left hidden" id="error-message"></p>
 
       </form>
 
@@ -91,9 +94,10 @@
     </div>
 
     <!-- Weather music -->
-    <div class="absolute left-0 bottom-2 w-full px-2">
-      <iframe id="weather-track" style="border-radius:12px" src="" width="100%" height="152" frameBorder="0"
+    <div class="w-fit md:w-2/3 lg:w-1/3 mx-auto">
+      <iframe id="weather-track" style="border-radius:12px" src="" width="100%" height="140px" frameBorder="0"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
     </div>
 
   </div>
