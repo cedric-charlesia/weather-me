@@ -13,7 +13,8 @@ export const getWeather = async (cityName) => {
   if (data.message === "city not found") {
     document.getElementById("error-message").classList.remove("hidden")
     document.getElementById("error-message").textContent = "Oups, une erreur s'est produite. Vérifiez l'orthographe et réessayez"
-    document.getElementById("weather-bg-img").style.backgroundImage = `url('public/beachview.jpg')`
+    document.getElementById("weather-bg-img").style.backgroundImage = ""
+    document.getElementById("weather-bg-img").classList.add("bg-gradient-to-r", "from-cyan-600", "to-blue-300")
     document.getElementById("content-container").classList.remove("bg-white")
     document.getElementById("weather-track").classList.add("hidden")
 

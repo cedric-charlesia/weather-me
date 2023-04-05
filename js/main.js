@@ -9,7 +9,8 @@ document.getElementById("submit-weather").addEventListener(
             document.getElementById("error-message").classList.remove("hidden")
             document.getElementById("error-message").textContent = "Veuillez entrer le nom d'une ville"
 
-            document.getElementById("weather-bg-img").style.backgroundImage = `url('public/beachview.jpg')`
+            document.getElementById("weather-bg-img").style.backgroundImage = ""
+            document.getElementById("weather-bg-img").classList.add("bg-gradient-to-r", "from-cyan-600", "to-blue-300")
 
             document.getElementById("content-container").classList.remove("bg-white")
             document.getElementById("weather-track").classList.add("hidden")
