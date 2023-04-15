@@ -36,6 +36,13 @@ document.getElementById("submit-weather").addEventListener(
             const cityName = userInput.toLowerCase()
             getWeather(cityName)
         }
-
-
     })
+
+    /** Mobile menu toggle **/
+const navigationMenu = document.querySelector(".mobile-menu");
+
+const toggleBtn = document
+  .querySelector("button.mobile-menu-button")
+  .addEventListener("click", function () {
+    navigationMenu.classList.toggle("hidden");
+  });

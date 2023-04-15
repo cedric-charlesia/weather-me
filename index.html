@@ -18,27 +18,51 @@
   <div class="h-screen flex flex-col w-screen bg-cover bg-gradient-to-r from-cyan-600 to-blue-300" id="weather-bg-img">
 
     <!-- App header -->
-    <header class="h-14 flex justify-between items-center uppercase bg-white bg-opacity-20 shadow-md px-2 rounded-b-lg">
+    <nav class="bg-white bg-opacity-20 shadow-md">
+      <div class="w-6xl px-4">
+        <div class="flex justify-between">
+          <!-- Logo -->
+          <div>
+            <a href="https://weather.cedriccharlesia.com"
+              class="flex items-center py-3 px-2 text-gray-700 hover:text-gray-900">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-10 h-10 text-yellow-400">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              </svg>
+              <span class="font-bold uppercase md:text-2xl text-yellow-400">Weather Me</span>
+            </a>
+          </div>
 
-      <a href="/" class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-10 h-10 text-yellow-400">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-        </svg>
+          <!-- Primary Nav -->
 
-        <h1 class="text-xl md:text-2xl font-bold text-yellow-400">Weather Me</h1>
-      </a>
+          <div class="hidden md:flex items-center uppercase font-bold md:text-md">
+            <a href="https://github.com/cedric-charlesia/weather-me" target="_blank"
+              class="py-2 px-2 text-gray-700 hover:text-yellow-300">Code Source</a>
+            <a href="/#portfolio" class="py-2 px-2 text-gray-700 hover:text-yellow-300">Retour au portfolio</a>
+          </div>
 
-      <div class="flex justify-between gap-4 px-4 font-bold text-sm md:text-lg">
-        <a href="https://github.com/cedric-charlesia/weather-me" target="_blank" class="hover:text-yellow-300">
-          Code Source
-        </a>
-        <a href="https://cedriccharlesia.com/" class="hover:text-yellow-300">
-          Retour au portfolio
-        </a>
+          <!-- Mobile Nav -->
+
+          <div class="md:hidden flex items-center">
+            <button class="mobile-menu-button text-yellow-400">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-10 h-10 text-yellow-300">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-    </header>
+
+      <!-- Mobile Menu -->
+
+      <div class="mobile-menu hidden md:hidden uppercase font-bold flex flex-col gap-2 px-4 pb-2">
+        <a href="https://github.com/cedric-charlesia/weather-me" target="_blank"
+          class="text-gray-700 hover:text-yellow-300">Code Source</a>
+        <a href="/#portfolio" class="text-gray-700 hover:text-yellow-300">Retour au portfolio</a>
+      </div>
+    </nav>
 
     <!-- App main content -->
     <div class="flex flex-col justify-between gap-4">
