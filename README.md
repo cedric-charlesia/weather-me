@@ -8,9 +8,9 @@ Une fois la recherche effectuée, Weather me affiche un fond d'écran et une mus
 ## Comment ça fonctionne ?
 L'application se connecte à 3 API :
 
-* [L'API Open Weather Map](https://openweathermap.org) pour obtenir la météo en temps réel
-* [L'API d'Unsplash](https://unsplash.com) pour chercher et afficher un fond d'écran
-* [L'API de Spotify](https://open.spotify.com) pour chercher et jouer de la musique
+* [L'API Open Weather Map](https://openweathermap.org/api) pour obtenir la météo en temps réel
+* [L'API d'Unsplash](https://unsplash.com/developers) pour chercher et afficher un fond d'écran
+* [L'API de Spotify](https://developer.spotify.com/) pour chercher et jouer de la musique
 
 ## Lancer le projet en local
 **`npm install`**
